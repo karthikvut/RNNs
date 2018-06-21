@@ -54,7 +54,7 @@ def getSentenceData(path, vocabulary_size=8000):
 	#Print training data example
 	x_example, y_example = X_train[17], y_train[17]
 	print("x:\n%s\n%s" % (" ".join([index_to_word[x] for x in x_example]), x_example))
-    print("\ny:\n%s\n%s" % (" ".join([index_to_word[x] for x in y_example]), y_example))
+    	print("\ny:\n%s\n%s" % (" ".join([index_to_word[x] for x in y_example]), y_example))
 	
 	return X_train, y_train
 	
