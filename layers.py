@@ -1,6 +1,7 @@
 class RnnLayer:
 	
 	def forward(self, x, prev_state, U, W, V):
+		
 		self.mulU = mulGate.forward(U, x)
 		self.mulW = mulGate.forward(W, prev_state)
 		self.add = addGate.forward(self.mulU, self.mulW)
@@ -10,7 +11,7 @@ class RnnLayer:
   
 	def backward(self, x, prev_state, U, W, V, diff_state, dmulV):
 	
-    self.forward(x, prev_state, U, W, V)
+    		self.forward(x, prev_state, U, W, V)
 		dV, dSV = mulGate.backward(V, self.state, dmulV)
 		dS = dSV+diff_state
 		dadd = activation.backward(self.add, dS)
